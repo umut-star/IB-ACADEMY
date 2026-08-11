@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>IB MasterClass — De Trader a Empresario | Programa para IBs de Weltrade</title>
+<meta name="description" content="Programa exclusivo para IBs de Weltrade: el sistema completo para conseguir, cuidar y multiplicar tu cartera.">
+<style>
+:root{
+  --bg:#08090b; --bg2:#0d0f12; --panel:#111316;
+  --line:rgba(255,255,255,.07);
+  --text:#f4f6f8; --muted:#888f9c;
+  --accent:#3ecf8e; --gold:#e7c88a;
+  --radius:14px; --maxw:1000px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:
+    radial-gradient(52% 40% at 50% -8%, rgba(62,207,142,.08), transparent 62%),
+    radial-gradient(46% 34% at 96% 2%, rgba(231,200,138,.05), transparent 58%),
+    var(--bg);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.62; letter-spacing:-.006em;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body.lang-en .es{display:none!important}
+body:not(.lang-en) .en{display:none!important}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+@media(min-width:768px){section{padding:120px 0}}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,9,11,.6);
+  backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+  border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;font-size:15px;white-space:nowrap}
+.logo b{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;flex-shrink:0}
+.lang-toggle button{background:transparent;border:0;color:var(--muted);font-weight:700;font-size:12px;
+  padding:7px 13px;cursor:pointer;transition:all .2s;font-family:inherit}
+.lang-toggle button.on{background:var(--accent);color:#05130c}
+nav .nav-cta{display:inline-flex;white-space:nowrap}
+@media(max-width:560px){
+  .nav-inner{gap:8px;padding:10px 14px}
+  .logo{font-size:13px}
+  .lang-toggle button{padding:6px 10px;font-size:11.5px}
+  nav .nav-cta{padding:8px 12px;font-size:12.5px}
+}
+
+/* type */
+h1{font-size:clamp(1.2rem,3.2vw,2.1rem);font-weight:800;letter-spacing:-.03em;line-height:1.12}
+h2{font-size:clamp(1.2rem,4vw,1.95rem);font-weight:700;letter-spacing:-.028em;line-height:1.16}
+h3{font-size:clamp(1.02rem,3vw,1.2rem);font-weight:650;letter-spacing:-.016em}
+.grad{background:linear-gradient(96deg,var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}
+.lead{font-size:clamp(1.02rem,2.6vw,1.24rem);color:var(--muted);max-width:660px}
+.muted{color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:15px;
+  padding:14px 26px;border-radius:11px;transition:all .22s;font-family:inherit;cursor:pointer;border:0;letter-spacing:-.01em}
+.btn-primary{background:var(--accent);color:#05130c;box-shadow:0 1px 0 rgba(255,255,255,.15) inset}
+.btn-primary:hover{transform:translateY(-1px);background:#4ad99a;box-shadow:0 8px 30px rgba(62,207,142,.20)}
+.btn-sm{padding:9px 17px;font-size:13.5px}
+.btn-ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.075)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* hero */
+#hero{padding-top:130px;padding-bottom:40px}
+.hero-sub{margin-top:24px}
+/* founder credential — otorite şeridi */
+#hero h1{margin-top:30px}
+.founder{display:flex;align-items:center;gap:18px;margin-top:0;padding:24px 26px;max-width:820px;
+  border:1px solid rgba(231,200,138,.26);border-radius:16px;
+  background:linear-gradient(92deg,rgba(231,200,138,.08),rgba(231,200,138,.01) 72%)}
+.f-mark{width:54px;height:54px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(231,200,138,.13);border:1px solid rgba(231,200,138,.34);color:var(--gold);font-size:1.4rem}
+.f-role{font-size:clamp(1.4rem,3.6vw,2.6rem);color:var(--gold);font-weight:800;line-height:1.18;letter-spacing:-.025em}
+.f-name{font-size:clamp(.86rem,1.6vw,1rem);color:var(--muted);margin-top:7px}
+.f-name b{color:var(--text);font-weight:700}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:640px){.grid.c2{grid-template-columns:1fr 1fr}.grid.c3{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.grid.c3{grid-template-columns:repeat(3,1fr)}}
+.card{background:rgba(255,255,255,.022);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:0 1px 0 rgba(255,255,255,.03) inset;transition:border-color .3s,background .3s,transform .3s}
+@media(hover:hover){.card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.038)}}
+.card p,.card li{font-size:.94rem;color:var(--muted)}
+.q-card h3{color:var(--gold);line-height:1.4}
+.glabel{display:flex;align-items:center;gap:12px;margin:34px 0 14px;font-size:.76rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.glabel::after{content:"";flex:1;height:1px;background:var(--line)}
+ul.clean{list-style:none}
+ul.clean li{padding:7px 0 7px 24px;position:relative;font-size:.94rem;color:var(--muted)}
+ul.clean li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+ul.clean.no li::before{content:"✕";color:#f87171}
+
+/* etapas */
+.etapa{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.022);
+  padding:26px;margin-bottom:14px;display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:820px){.etapa{grid-template-columns:1fr 1fr;align-items:center;padding:32px}}
+.etapa .e-num{font-size:clamp(2.6rem,7vw,3.6rem);font-weight:800;line-height:1;letter-spacing:-.04em;
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.06));
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:6px}
+.etapa h3{color:var(--gold);margin-bottom:10px;font-size:clamp(1.15rem,3.4vw,1.45rem)}
+.etapa .out{color:var(--text);font-size:.98rem;line-height:1.6}
+
+/* locked preview */
+.peek{position:relative;border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:16px;overflow:hidden}
+.peek .plabel{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px;display:block}
+.peek .open{font-size:.9rem;color:var(--text);line-height:1.55}
+.peek .blur{filter:blur(5.5px);user-select:none;pointer-events:none;opacity:.55;font-size:.9rem;line-height:1.55;margin-top:8px}
+.peek .lock{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:.74rem;font-weight:700;
+  color:var(--gold);background:rgba(231,200,138,.08);border:1px solid rgba(231,200,138,.22);
+  border-radius:99px;padding:6px 13px}
+/* mini chat */
+.mchat .b{max-width:88%;padding:8px 12px;border-radius:12px;margin:6px 0;font-size:.88rem;line-height:1.5}
+.mchat .them{background:rgba(255,255,255,.04);border:1px solid var(--line);border-top-left-radius:4px;margin-right:auto;color:var(--text)}
+.mchat .me{background:rgba(62,207,142,.10);border:1px solid rgba(62,207,142,.25);border-top-right-radius:4px;margin-left:auto;color:var(--text)}
+/* mini funnel */
+.mfunnel{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font-weight:700;color:var(--text);font-size:.95rem}
+.mfunnel .n{display:inline-block;min-width:34px;text-align:center;border-bottom:2px dashed rgba(255,255,255,.25);color:var(--muted)}
+.mfunnel .arr{color:var(--accent)}
+/* mini board */
+.mboard{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.mcol{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02);padding:8px}
+.mcol b{display:block;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.mcard{height:9px;border-radius:4px;background:rgba(255,255,255,.10);margin-bottom:5px}
+.mcard.s{width:70%}
+
+/* steps */
+.steps{display:grid;gap:0;margin-top:10px}
+.step{display:flex;gap:18px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:0}
+.step-n{flex-shrink:0;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+  color:var(--accent);font-weight:800;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03)}
+.step h3{margin-bottom:3px;font-size:1rem}
+.step p{font-size:.93rem;color:var(--muted)}
+
+.note{border:1px solid rgba(231,200,138,.22);background:rgba(231,200,138,.05);border-radius:var(--radius);
+  padding:16px 18px;margin-top:18px;font-size:.9rem;color:var(--muted)}
+.note b{color:var(--gold)}
+
+.final{text-align:center}
+.final .cta-row{justify-content:center}
+.legal{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:.76rem;color:#5d6472;line-height:1.6;max-width:760px}
+footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-size:.8rem;color:#5d6472}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">IB <b>MasterClass</b></div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button id="btn-es" class="on" type="button">ES</button>
+        <button id="btn-en" type="button">EN</button>
+      </div>
+      <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">
+        <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="founder">
+        <div class="f-mark">★</div>
+        <div>
+          <div class="f-role"><span class="es">Fundador de la primera academia para IBs de Latinoamérica</span><span class="en">Founder of the first IB academy in Latin America</span></div>
+          <div class="f-name"><b>Umut Şimşek</b> · <span class="es">IB Manager en Weltrade</span><span class="en">IB Manager at Weltrade</span></div>
+        </div>
+      </div>
+      <p class="lead hero-sub">
+        <span class="es">El sistema completo para conseguir, cuidar y multiplicar tu cartera de clientes — y convertir tu trabajo de IB en una empresa que crece cada mes.</span>
+        <span class="en">The complete system to win, keep and multiply your client portfolio — and turn your IB work into a business that grows every month.</span>
+      </p>
+      <h1><span class="es">De Trader a <span class="grad">Empresario</span></span><span class="en">From Trader to <span class="grad">Entrepreneur</span></span></h1>
+      <div class="cta-row">
+        <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span class="es">Agenda una reunión</span><span class="en">Book a meeting</span>
+        </a>
+        <a href="#camino" class="btn btn-ghost"><span class="es">Ver de qué trata</span><span class="en">See what it covers</span> ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">El problema</span><span class="en">The problem</span></div>
+      <h2><span class="es">Si algo de esto te suena, esta academia es para ti.</span><span class="en">If any of this sounds familiar, this academy is for you.</span></h2>
+    </div>
+    <div class="glabel reveal"><span class="es">Si empiezas desde cero</span><span class="en">If you're starting from zero</span></div>
+    <div class="grid c3">
+      <div class="card q-card reveal"><h3><span class="es">¿Por dónde empiezo si todavía no tengo un solo cliente?</span><span class="en">Where do I start if I don't have a single client yet?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Cómo hablo con alguien sin sonar a vendedor?</span><span class="en">How do I talk to someone without sounding like a salesperson?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Y si escribo y nadie me responde?</span><span class="en">What if I write and nobody replies?</span></h3></div>
+    </div>
+
+    <div class="glabel reveal"><span class="es">Si ya tienes clientes</span><span class="en">If you already have clients</span></div>
+    <div class="grid c3">
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué tus clientes desaparecen en el primer mes?</span><span class="en">Why do your clients disappear in the first month?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué ganas dos clientes y pierdes dos?</span><span class="en">Why do you win two clients and lose two?</span></h3></div>
+      <div class="card q-card reveal"><h3><span class="es">¿Por qué tu negocio se detiene cuando tú te detienes?</span><span class="en">Why does your business stop when you stop?</span></h3></div>
+    </div>
+    <p class="lead reveal" style="margin-top:26px;color:var(--text)">
+      <span class="es">Ninguna de estas es mala suerte. Cada una tiene un proceso que la resuelve — y eso es exactamente lo que se enseña dentro.</span>
+      <span class="en">None of these is bad luck. Each one has a process that solves it — and that's exactly what's taught inside.</span>
+    </p>
+  </div>
+</section>
+
+<!-- CAMINO / 5 ETAPAS -->
+<section id="camino">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">El camino</span><span class="en">The path</span></div>
+      <h2><span class="es">5 etapas, de tu primer cliente a tu propia empresa.</span><span class="en">5 stages, from your first client to your own company.</span></h2>
+      <p class="lead" style="margin-top:16px">
+        <span class="es">Esto es lo que consigues en cada etapa. El método completo —guiones, plantillas y números— se comparte dentro de la academia.</span>
+        <span class="en">This is what you get in each stage. The full method —scripts, templates and numbers— is shared inside the academy.</span>
+      </p>
+    </div>
+
+    <div style="margin-top:38px">
+      <!-- 01 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">01</div>
+          <h3><span class="es">El Primer Cliente</span><span class="en">The First Client</span></h3>
+          <p class="out"><span class="es">Sabrás exactamente qué decir desde el primer mensaje hasta el primer depósito — sin improvisar y sin prometer nada.</span><span class="en">You'll know exactly what to say from the first message to the first deposit — no improvising, no promises.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Un momento real</span><span class="en">A real moment</span></span>
+          <div class="mchat">
+            <div class="b them"><span class="es">Hola, vi tu anuncio… pero he visto mucha estafa. ¿Esto es una estafa?</span><span class="en">Hi, I saw your ad… but I've seen a lot of scams. Is this a scam?</span></div>
+            <div class="b me blur"><span class="es">Respuesta completa disponible dentro de la academia, junto con el guión de la conversación entera y las seis objeciones más frecuentes.</span><span class="en">Full answer available inside the academy, along with the complete conversation script and the six most frequent objections.</span></div>
+          </div>
+          <span class="lock">🔒 <span class="es">Guión completo en la academia</span><span class="en">Full script inside the academy</span></span>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">02</div>
+          <h3><span class="es">La Disciplina Diaria</span><span class="en">The Daily Discipline</span></h3>
+          <p class="out"><span class="es">Tendrás un número diario que depende solo de ti — y un sistema para cumplirlo incluso en tus peores días.</span><span class="en">You'll have a daily number that depends only on you — and a system to hit it even on your worst days.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Tu embudo diario</span><span class="en">Your daily funnel</span></span>
+          <div class="mfunnel">
+            <span><span class="n">&nbsp;</span> <span class="es">conversaciones</span><span class="en">conversations</span></span>
+            <span class="arr">→</span>
+            <span><span class="n">&nbsp;</span> <span class="es">registros</span><span class="en">sign-ups</span></span>
+            <span class="arr">→</span>
+            <span><span class="n">&nbsp;</span> FTD</span>
+          </div>
+          <p class="blur" style="text-align:center"><span class="es">Las proporciones exactas y cómo subirlas sin romper tu constancia.</span><span class="en">The exact ratios and how to raise them without breaking your consistency.</span></p>
+          <span class="lock">🔒 <span class="es">Los números, dentro</span><span class="en">The numbers, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">03</div>
+          <h3><span class="es">Retención</span><span class="en">Retention</span></h3>
+          <p class="out"><span class="es">Dejarás de perder dos clientes por cada dos que ganas: tu cartera deja de ser un balde y se vuelve un motor.</span><span class="en">You'll stop losing two clients for every two you win: your portfolio stops being a bucket and becomes an engine.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Señales de fuga</span><span class="en">Churn signals</span></span>
+          <p class="open"><span class="es">7+ días sin operar · salió del grupo · responde en monosílabos…</span><span class="en">7+ days without trading · left the group · one-word replies…</span></p>
+          <p class="blur"><span class="es">Qué hacer en las primeras 24 horas, con los mensajes exactos para cada caso y el punto de control semanal.</span><span class="en">What to do in the first 24 hours, with the exact messages for each case and the weekly control point.</span></p>
+          <span class="lock">🔒 <span class="es">El plan de 24h, dentro</span><span class="en">The 24h plan, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">04</div>
+          <h3><span class="es">La Sistematización</span><span class="en">Systemization</span></h3>
+          <p class="out"><span class="es">Tu negocio dejará de vivir en tu cabeza: web, bots y un CRM trabajando por ti, incluso cuando duermes.</span><span class="en">Your business will stop living in your head: website, bots and a CRM working for you, even while you sleep.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Tu CRM: nadie se pierde</span><span class="en">Your CRM: nobody slips away</span></span>
+          <div class="mboard">
+            <div class="mcol"><b><span class="es">Nuevo</span><span class="en">New</span></b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+            <div class="mcol"><b>FTD</b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+            <div class="mcol"><b><span class="es">Inactivo</span><span class="en">Inactive</span></b><div class="mcard blur"></div><div class="mcard s blur"></div></div>
+          </div>
+          <span class="lock">🔒 <span class="es">El sistema completo, dentro</span><span class="en">The full system, inside</span></span>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="etapa reveal">
+        <div>
+          <div class="e-num">05</div>
+          <h3><span class="es">La Empresa Profesional</span><span class="en">The Professional Company</span></h3>
+          <p class="out"><span class="es">Pasarás de ser «un IB con clientes» a dueño de una empresa con mentalidad, equipo y números.</span><span class="en">You'll go from being "an IB with clients" to the owner of a business with mindset, a team and numbers.</span></p>
+        </div>
+        <div class="peek">
+          <span class="plabel"><span class="es">Lo que puedes hacer como empresa</span><span class="en">What you can do as a company</span></span>
+          <p class="open"><span class="es">1 · Contratar un equipo real</span><span class="en">1 · Hire a real team</span></p>
+          <p class="blur"><span class="es">2 · Construir una marca propia · 3 · Llegar a clientes corporativos · 4 · Reinvertir capital · 5 · Diversificar ingresos · 6 · Escalar y replicar tu método</span><span class="en">2 · Build your own brand · 3 · Reach corporate clients · 4 · Reinvest capital · 5 · Diversify income · 6 · Scale and replicate your method</span></p>
+          <span class="lock">🔒 <span class="es">Las 6 puertas, dentro</span><span class="en">The 6 doors, inside</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section id="confianza">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Respaldo</span><span class="en">Backing</span></div>
+      <h2><span class="es">¿Por qué confiar en esta academia?</span><span class="en">Why trust this academy?</span></h2>
+    </div>
+    <div class="card reveal" style="margin-top:28px;border-color:rgba(231,200,138,.24)">
+      <ul class="clean" style="margin:0">
+        <li><span class="es"><b style="color:var(--text)">Respaldada por Weltrade</b> — un bróker regulado, en el mercado desde 2006, presente en +40 países y con +1M de usuarios.</span><span class="en"><b style="color:var(--text)">Backed by Weltrade</b> — a regulated broker, in the market since 2006, present in +40 countries and with +1M users.</span></li>
+        <li><span class="es"><b style="color:var(--text)">El primer programa de desarrollo de IBs de Latinoamérica</b> — no existe otra academia así en la región.<br><span style="font-size:.82em;color:var(--muted);font-style:italic">por Umut Şimşek · IB Manager en Weltrade</span></span><span class="en"><b style="color:var(--text)">The first IB development program in Latin America</b> — there's no other academy like it in the region.<br><span style="font-size:.82em;color:var(--muted);font-style:italic">by Umut Şimşek · IB Manager at Weltrade</span></span></li>
+        <li><span class="es"><b style="color:var(--text)">Método práctico, no teoría</b> — cada etapa se aplica desde el primer día.</span><span class="en"><b style="color:var(--text)">Practical method, not theory</b> — every stage applies from day one.</span></li>
+        <li><span class="es"><b style="color:var(--text)">Gratuita</b> — tu única inversión es tu tiempo y tu constancia.</span><span class="en"><b style="color:var(--text)">Free</b> — your only investment is your time and consistency.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="paraquien">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Filtro</span><span class="en">Filter</span></div>
+      <h2><span class="es">No es para todos.</span><span class="en">It's not for everyone.</span></h2>
+    </div>
+    <div class="grid c2 reveal" style="margin-top:28px">
+      <div class="card" style="border-color:rgba(62,207,142,.24)">
+        <h3 style="color:var(--accent);margin-bottom:8px"><span class="es">Es para ti si…</span><span class="en">It's for you if…</span></h3>
+        <ul class="clean">
+          <li><span class="es">Tienes una comunidad o la estás construyendo en serio.</span><span class="en">You have a community or you're building one seriously.</span></li>
+          <li><span class="es">Trabajas —o quieres trabajar— como IB con Weltrade.</span><span class="en">You work —or want to work— as an IB with Weltrade.</span></li>
+          <li><span class="es">Estás dispuesto a aplicar, no solo a leer.</span><span class="en">You're willing to apply, not just read.</span></li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:rgba(248,113,113,.2)">
+        <h3 style="color:#f87171;margin-bottom:8px"><span class="es">No es para ti si…</span><span class="en">It's not for you if…</span></h3>
+        <ul class="clean no">
+          <li><span class="es">Ofreces garantías o promesas de ganancia a tu comunidad.</span><span class="en">You offer guarantees or profit promises to your community.</span></li>
+          <li><span class="es">Ves a tus clientes como depósitos, no como una cartera a largo plazo.</span><span class="en">You see your clients as deposits, not as a long-term portfolio.</span></li>
+          <li><span class="es">Desapareces cuando tu cliente pierde.</span><span class="en">You disappear when your client loses.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESO -->
+<section id="acceso">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker"><span class="es">Acceso</span><span class="en">Access</span></div>
+      <h2><span class="es">Cómo se accede</span><span class="en">How to get access</span></h2>
+      <p class="lead" style="margin-top:16px">
+        <span class="es">El contenido completo no es público: se comparte solo con los IBs de nuestra red.</span>
+        <span class="en">The full content isn't public: it's shared only with the IBs in our network.</span>
+      </p>
+    </div>
+    <div class="steps reveal" style="margin-top:22px">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h3><span class="es">Agenda una reunión de 30 minutos</span><span class="en">Book a 30-minute meeting</span></h3>
+          <p><span class="es">Conmigo, sin compromiso y sin costo.</span><span class="en">With me, no commitment and no cost.</span></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h3><span class="es">Hablamos de tu comunidad y tus objetivos</span><span class="en">We talk about your community and your goals</span></h3>
+          <p><span class="es">Dónde estás hoy, a dónde quieres llegar y qué te está frenando.</span><span class="en">Where you are today, where you want to go and what's holding you back.</span></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h3><span class="es">Si encajas, te doy acceso completo a la academia</span><span class="en">If it's a fit, I give you full access to the academy</span></h3>
+          <p><span class="es">Las 5 etapas, con todos los guiones, plantillas y números.</span><span class="en">All 5 stages, with every script, template and number.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="note reveal">
+      <span class="es"><b>¿Por qué no está abierto?</b> Porque el sistema es el resultado de años de trabajo con IBs reales — y porque acompañarte de verdad solo es posible con un grupo cuidado, no con una lista abierta.</span>
+      <span class="en"><b>Why isn't it open?</b> Because the system is the result of years of work with real IBs — and because truly supporting you is only possible with a curated group, not an open list.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="final">
+  <div class="wrap final">
+    <div class="reveal">
+      <h2><span class="es">Tu comunidad ya existe.<br><span class="grad">Ahora conviértela en un negocio.</span></span><span class="en">Your community already exists.<br><span class="grad">Now turn it into a business.</span></span></h2>
+      <p class="lead" style="margin:20px auto 0"><span class="es">Media hora de conversación puede cambiar cómo trabajas los próximos doce meses.</span><span class="en">Half an hour of conversation can change how you work for the next twelve months.</span></p>
+      <div class="cta-row">
+        <a href="https://calendly.com/umut-weltrade/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          📅 <span class="es">Agenda una reunión conmigo</span><span class="en">Book a meeting with me</span>
+        </a>
+      </div>
+    </div>
+    <div class="legal reveal" style="margin-left:auto;margin-right:auto">
+      <span class="es">Aviso: este contenido es formativo y no constituye asesoría financiera ni una promesa de ingresos. Operar en los mercados financieros implica riesgo de pérdida. Los resultados de un IB dependen exclusivamente de su esfuerzo, constancia y de las condiciones del mercado. Ningún resultado pasado garantiza resultados futuros.</span>
+      <span class="en">Notice: this content is educational and does not constitute financial advice or an income promise. Trading in financial markets involves risk of loss. An IB's results depend exclusively on their effort, consistency and market conditions. No past result guarantees future results.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  IB MasterClass — <span class="es">De trader a empresario.</span><span class="en">From trader to entrepreneur.</span>
+  · <span class="es">Diseñado por Umut Şimşek</span><span class="en">Designed by Umut Şimşek</span>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+function setLang(l){
+  document.body.classList.toggle('lang-en',l==='en');
+  document.documentElement.lang=l;
+  btnEs.classList.toggle('on',l==='es');
+  btnEn.classList.toggle('on',l==='en');
+  try{localStorage.setItem('ibinv-lang',l)}catch(e){}
+}
+btnEs.addEventListener('click',function(){setLang('es')});
+btnEn.addEventListener('click',function(){setLang('en')});
+try{var s=localStorage.getItem('ibinv-lang');if(s==='en')setLang('en')}catch(e){}
+
+var rev=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  rev.forEach(function(el){io.observe(el)});
+}else{rev.forEach(function(el){el.classList.add('visible')})}
+})();
+</script>
+</body>
+</html>
